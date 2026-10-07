@@ -1,0 +1,748 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: sans-serif;
+    
+}
+:root {
+    --bg-color: #1F1F29;
+    --main-color: #5983FC;
+    --sec-color: #3E60C1;
+    --ter-color: #2E4583; /* or 293556 */
+}
+h1 {
+    font-size: 2.5em;
+}
+h2 {
+    font-size: 1.5em;
+}
+
+h1, h2, p, label, button {
+    font-weight: 400;
+    font-family: "Rubik", sans-serif;
+}
+i {
+    font-weight: 800;
+}
+a {
+    font-family: "Rubik", sans-serif;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+
+}
+
+@media print {
+    .table, .table__body {
+        overflow: visible;
+        height: auto !important;
+        width: auto !important;
+    }
+}
+
+body {
+    /* position: absolute; */
+    /* background-color: var(--ter-color); */
+    background: var(--bg-color);
+    color: rgb(255, 246, 246);
+    font-family: "Rubik", sans-serif;
+
+}
+
+header {
+    position: absolute;
+    background-color: white;
+    height: 100px;
+    width: 100%;
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+.table {   
+    position: absolute;
+    top: 0;
+    min-height: 100dvh;
+
+    width: 100vw;
+    height: calc(90dvh - 1rem);
+    padding: 1em;
+
+    background: linear-gradient(45deg, var(--ter-color), var(--bg-color));
+
+    backdrop-filter: blur(7px);
+    box-shadow: 0 .4rem .8rem #0005;
+
+    overflow: hidden;
+}
+
+.table__header {
+    width: 100%;
+    margin-top: 90px;
+    height: 7%;
+    background-color: transparent;
+    padding: .4rem 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.table__header .input-group {
+    width: 35%;
+    height: 100%;
+    background-color: rgba(253, 251, 251, 0.333);
+    padding: 0 .8rem;
+    border-radius: 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: .2s;
+}
+
+.table__header .input-group:hover {
+    width: 45%;
+    background-color: rgba(255, 253, 253, 0.805);
+    box-shadow: 0 .1rem .4rem rgba(77, 77, 77, 0.133);
+}
+
+.table__header .input-group img {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.table__header .input-group input {
+    width: 100%;
+    padding: 0 .5rem 0 .3rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.table__userdata {
+    width: 98%;
+    height: 10%;
+    background-color: white;
+    
+    color: black;
+    padding: 0 3em;
+
+    border-radius: .6rem .6rem 0 0;
+    margin: 0 .8em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.table__body {
+    width: 98%;
+    max-height: calc(75% - 1rem);
+    background-color: rgba(255, 255, 255, 0.733);
+
+    margin: 0 .8em .8em .8em;
+    border-radius: 0 0 .6rem .6rem;
+
+    overflow: overlay;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+
+.table__body::-webkit-scrollbar{
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+.table__body::-webkit-scrollbar-thumb{
+    border-radius: .5rem;
+    background-color: #0004;
+    visibility: hidden;
+}
+
+.table__body:hover::-webkit-scrollbar-thumb{ 
+    visibility: visible;
+}
+
+/* Reference */
+span.disable-btn {
+    cursor: not-allowed;
+    pointer-events: none;
+    filter: grayscale(1);
+}
+span.disable-acctRef {
+    pointer-events: all;
+    filter: grayscale(0);
+}
+.link {
+    color: black;
+    font-weight: 600;
+}
+.link:hover {
+    color: blue;
+    transition: ease-in-out .2s;
+    text-decoration: underline;
+}
+
+/* Style the tab */
+.tab {
+    margin-top: 100px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    overflow: auto;
+    height: calc(80dvh - 1rem);
+    display: block;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 0 0 .6rem .6rem;
+    border-top: none;
+}
+.hidden {
+    display: none;
+}
+
+.ref__table__header {
+    width: 100%;
+    height: 7%;
+    background-color: transparent;
+    padding: .4rem 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.ref__table__header .input-group {
+    width: 35%;
+    height: 100%;
+    background-color: rgba(253, 251, 251, 0.333);
+    padding: 10px .8rem;
+    border-radius: 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: .2s;
+}
+
+.ref__table__header .input-group:hover {
+    width: 45%;
+    background-color: rgba(255, 253, 253, 0.805);
+    box-shadow: 0 .1rem .4rem rgba(77, 77, 77, 0.133);
+}
+
+.ref__table__header .input-group img {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.ref__table__header .input-group input {
+    width: 100%;
+    padding: 0 .5rem 0 .3rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.ref__table__body {
+    width: 98%;
+    max-height: calc(90% - 1rem);
+    background-color: rgba(255, 255, 255, 0.733);
+
+    margin: 0 .8em .8em .8em;
+    border-radius: 0 0 .6rem .6rem;
+
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    /* overflow: overlay; */
+}
+
+
+.ref__table__body::-webkit-scrollbar{
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+.ref__table__body::-webkit-scrollbar-thumb{
+    border-radius: .5rem;
+    background-color: #0004;
+    visibility: hidden;
+}
+
+.ref__table__body:hover::-webkit-scrollbar-thumb{ 
+    visibility: visible;
+}
+
+table {
+    color: white;
+    width: 100%;
+}
+
+table, th, td {
+    border-collapse: collapse;
+    padding: 1rem;
+    text-align: left;
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: var(--ter-color);
+    cursor: pointer;
+    text-transform: capitalize;
+    z-index: 10;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #0000000b;
+}
+
+tbody tr {
+    color: black;
+    --delay: 0s;
+    transition: .3s ease-in-out var(--delay), background-color 0s;
+}
+
+/* each tr animation */
+tbody tr.hide,
+tbody tr.hide td .select {
+    opacity: 0;
+    padding: 0;
+    transform: translateX(100%);
+}
+
+tbody tr:hover {
+    background-color: #fff6 !important;
+}
+
+tbody tr td,
+tbody tr td p,
+tbody tr td img {
+    overflow-x: hidden;
+    transition: .3s ease-in-out;
+}
+
+tbody tr.hide td,
+tbody tr.hide td p,
+tbody tr.hide td .statusSpan,
+tbody tr.hide td .select {
+    overflow-x: hidden;
+    opacity: 0;
+    padding: 0;
+    font: 0 / 0 sans-serif;
+    transition: .2s ease-in-out .3s;
+}
+
+tbody tr.hide td img {
+    width: 0;
+    height: 0;
+    transition: .2s ease-in-out .3s;
+}
+
+@media (max-width: 1000px) {
+    td:not(:first-of-type) {
+        min-width: 12.1rem;
+    }
+}
+
+thead th span.icon-arrow {
+    display: inline-block;
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 50%;
+    border: 1.4px solid transparent;
+    
+    text-align: center;
+    font-size: 1rem;
+    
+    margin-left: .5rem;
+    transition: .2s ease-in-out;
+}
+
+thead th:hover span.icon-arrow{
+    border: 1.4px solid white;
+    cursor: pointer;
+   
+}
+thead th:hover {
+    color: var(--main-color);
+}
+
+thead th.active span.icon-arrow{
+    background-color: transparent;
+}
+
+thead th.asc span.icon-arrow{
+    transform: rotate(180deg);
+}
+
+thead th.active,tbody td.active {
+    color: var(--main-color);
+}
+
+
+.dropbtn {
+    background-image: url(../assets/icons/setting.png); /* 16px x 16px */
+    background-color: transparent; /* make the button transparent */
+    background-repeat: no-repeat;
+    color: black;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    left: -20px;
+    width: 100px;
+    text-align: center;
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {background-color: #ccc;}
+.dropdown:hover .dropdown-content {display: block;}
+
+
+.container {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+.center { display: flex; justify-content: center; }
+
+.return {
+    transition: all .3s;
+    border: 1px solid white;
+    padding: 5px 20px;
+    border-radius: 15px;
+    background-color: var(--sec-color);
+    font-weight: 700;
+}
+.return:hover {
+    background-color: white;
+    border: 1px solid black;
+    color: var(--main-color);
+    transition: all .3s;
+}
+
+.link-btn {
+    background-color: var(--main-color);
+    padding: .5rem 1rem;
+
+    border-radius: 50px;
+    font-size: 12px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: all .3s;
+}
+.link-btn:hover {
+    color: var(--main-color);
+    border: 1px solid white;
+    background-color: var(--bg-color);
+    transition: all .3s;
+}
+
+.count {
+    display: flex;
+    justify-content: space-between;
+    text-wrap: nowrap;
+    padding: 5px 40px;    
+    height: 40px;
+    font-size: 16px;
+}
+
+
+/* References Pagination Linkss */
+/* .pagination-btns {
+    display: flex;
+    align-items: center;
+    padding: 5px 600px;
+    height: 40px;
+    width: 100%;
+}
+.pagination-btn {
+    background-color: var(--main-color);
+    padding: 5px 25px;
+    border-radius: 15px;
+    font-size: 12px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: all .3s;
+}
+.pagination-btn:hover {
+    color: var(--main-color);
+    border: 1px solid white;
+    background-color: var(--bg-color);
+    transition: all .3s;
+} */
+.pagination {
+    padding: 0 .8rem;
+}
+.next {
+    font-weight: 400;
+    font-size: 14px;
+    padding: .5em;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #5983FC;
+}
+.next:hover {
+    color: var(--main-color);
+    border: 1px solid white;
+    background-color: var(--bg-color);
+    transition: all .3s;
+}
+.prev {
+    background-color: #ddd;
+    color: black;
+}
+
+
+
+.add-form {
+    padding: 25px 30px;
+    max-width: 700px;
+    width: 100%;
+    background: #fff;
+    color: black;
+}   
+.add-form .title {
+    margin: 10px 0 5px;
+    font-size: 25px;
+    font-weight: 800;
+    position: relative;
+}
+.add-form .title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(135deg, var(--main-color), var(--sec-color));
+}
+.add-form form .asset-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 15px 0 5px 0;
+}
+form .asset-details .input-box {
+    margin-bottom: 10px;
+    width: calc(100% / 2 - 20px);
+}
+.asset-details .input-box .details {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+.asset-details .input-box input,
+.asset-details .input-box select,
+.asset-details .input-box .asset-tag {
+    height: 40px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+}
+.title {
+    margin-top: 100px;
+
+    display: flex;
+    justify-content: space-between;
+}
+/* .search-container {
+    font-size: 5px;
+    margin-bottom: 10px;
+} */
+
+input[type=text],
+input[type=date] {
+    padding-left: 15px;
+    border-radius: 5px 0 0 5px;
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 15px;
+    border: none;
+    width: 233px;
+}
+
+/* .search-container button, */
+.filter button {
+    border-radius: 0 5px 5px 0;
+
+    float: right;
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.filter select {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 14px;
+    border: none;
+}
+
+/* .available,
+.deployed,
+.defect,
+.sell,
+.missing {
+    padding: 4px 8px;
+    border-radius: 15px;
+    font-weight: 600;
+}
+.available {
+    background-color: rgb(25, 255, 25);
+}
+.deployed {
+    background-color: rgb(134, 237, 255);
+}
+.defect {
+    background-color: rgb(255, 132, 61);
+}
+.sell {
+    background-color: rgb(0, 247, 255);
+}
+.missing {
+    background-color: rgb(255, 158, 231);
+} */
+
+/* 
+.search-container .filter {
+    border-radius: 0 5px 5px 0;
+
+    float: left;
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+} */
+
+.asset-details .input-box .asset-tag {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+form .button {
+    height: 40px;
+    margin: 20px 0;
+}
+form .button input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background: linear-gradient(135deg, var(--main-color), var(--sec-color));
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: ease-in-out .3s;
+    cursor: pointer;
+}
+form .button input:hover {
+    background: none;
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+    transition: ease-in-out .3s;
+}
+
+
+.activePage {
+    background-color: #a8a8a8;
+}
+
+@media (max-width: 584px) {
+    .container {
+        max-width: 100%;
+    }
+    .link-btn {
+        padding: .4rem 1rem;
+    }
+    form .asset-details .input-box {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    .table__body {
+        overflow-x: hidden;
+
+        max-height: calc(85% - 1rem);
+        margin: 0 .8em 4em .8em;
+    }
+    .ref__table__body {
+        overflow-x: hidden;
+
+        max-height: calc(85% - 1rem);
+        margin: 0 .8em 4em .8em;
+    }
+    .add-form form .asset-details {
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+}

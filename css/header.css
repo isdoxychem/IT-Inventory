@@ -1,0 +1,20 @@
+
+header {
+    position: absolute;
+    background-color: white;
+    height: 100px;
+    width: 100%;
+    padding: 0 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+@media screen and (max-width: 1366px) {
+  /* .grid-container {
+    grid-template-rows: .3fr 3fr;
+  }  */
+  header {
+    height: 80px;
+  }
+}

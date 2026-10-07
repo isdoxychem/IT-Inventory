@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+* {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: "Rubik", sans-serif;
+    font-size: 14px;
+
+}
+:root {
+    --bg-color: #1F1F29;
+    --main-color: #5983FC;
+    --sec-color: #3E60C1;
+    --ter-color: #2E4583; /* or 293556 */
+}
+
+h1, h2, h3, p, h4 {
+    font-weight: 400;
+}
+h1 {
+    font-size: 2.5em;
+}
+h2 {
+    font-size: 1.3em;
+}
+p {
+    font-weight: 400;
+    margin-top: 5px;
+    text-wrap: wrap;
+}
+
+body {
+    /* background-color: var(--ter-color); */
+    color: black;
+    min-height: 100dvh;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+.logo {
+    float: left;
+    position: absolute;
+}
+.empInfo {
+    display: flex;
+    justify-content: space-between;
+}
+table {
+    font-weight: 400;
+}
+.content {
+    width: 100%;
+    padding: 2em 3em;
+}
+.assets-table {
+    width: 100%;
+    font-size: 12px;
+    border-collapse: collapse;
+}
+th {
+    background-color: rgb(178, 178, 178);
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+}
+th, td {
+    padding: 5px 10px;
+    border: 1px solid black;
+}
+.link-btns {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 10px 40px;
+    height: 50px;
+    width: 100%;
+}
+.link-btn {
+    background-color: var(--main-color);
+    padding: 5px 25px;
+    border: 1px solid black;
+    border-radius: 15px;
+    transition: all .3s;
+    color: black;
+}
+.link-btn:hover {
+    color: var(--main-color);
+    border: 1px solid white;
+    background-color: var(--bg-color);
+    transition: all .3s;
+}
+
+
+.container {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+.signature-row {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  margin-top: 30px;
+}
+
+.signature-align {
+  flex-direction: column;
+}
+
+.signature-unit {
+  display: flex;
+  align-items: center;
+}
+
+.line {
+  border-bottom: 1px solid #000;
+  width: 230px;
+  margin-bottom: 5px;
+}
+
+.date-line {
+  width: 150px;
+}
+
+/* department below the two */
+.department-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+
+/* Deployed */
+.deployed-align {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+
+}
+.deployed-row {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+
+@media (max-width: 584px) {
+    .container {
+        max-width: 100%;
+    }
+    form .asset-details .input-box {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    .add-form form .asset-details {
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+}

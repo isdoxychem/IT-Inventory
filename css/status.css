@@ -1,0 +1,54 @@
+.status {
+    padding: .4rem .5rem ;
+    border-radius: 2rem;
+    text-align: center;
+}
+
+.status.tobedeploy {
+    background-color: #86e49d;
+    color: #006b21;
+}
+.status.outdated {
+    background-color: #a63aff;
+    color: #efdbff;
+}
+.status.repair { 
+    background-color: rgb(255, 224, 158);
+    color: rgb(173, 118, 0);
+} 
+
+.status.replace {
+    background-color: #ebc474;
+    color: #916000;
+}
+
+.status.deployed {
+    background-color: #6fcaea;
+    color: #00516e;
+}
+
+.missing {
+    background-color: #d893a3;
+    color: #6d0019;
+}
+
+
+/* Refernce */
+.docu {
+    padding: .4rem .5rem ;
+    border-radius: 2rem;
+    text-align: center;
+}
+
+.docu.signed {
+    background-color: #b9ff84;
+    color: #029000;
+}
+.docu.processing {
+    background-color: #8fbeff;
+    color: #0050a6;
+}
+.docu.turnedover {
+    background-color: #ff7681;
+    color: #6f0009;
+}
